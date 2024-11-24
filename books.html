@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Details</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+      </head>
+      
+  <script>
+    // JSON data from Question 1
+    const books = [
+      {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "publicationYear": 1925,
+        "genres": ["Fiction", "Classics"]
+      },
+      {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "publicationYear": 1960,
+        "genres": ["Fiction", "Coming-of-Age"]
+      }
+    ];
+
+    // Function to display book details
+    function displayBookDetails() {
+      // Get the required elements
+      const titleElement = document.getElementById("title-first-book");
+      const authorElement = document.getElementById("author-second-book");
+      const genresElement = document.getElementById("genres-all-books");
+
+      // Update the content with the book details
+      titleElement.textContent = books[0].title;
+      authorElement.textContent = books[1].author;
+
+      // Combine all genres into a single string
+      const allGenres = books.flatMap(book => book.genres).join(", ");
+      genresElement.textContent = allGenres;
+    }
+
+    // Call the function when the page loads
+    window.onload = displayBookDetails;
+  </script>
+</head>
+<body>
+  <h1>Book Details</h1>
+  <p><strong>Title of the first book:</strong> <span id="title-first-book"></span></p>
+  <p><strong>Author of the second book:</strong> <span id="author-second-book"></span></p>
+  <p><strong>Genres of all books:</strong> <span id="genres-all-books"></span></p>
+</body>
+</html>
